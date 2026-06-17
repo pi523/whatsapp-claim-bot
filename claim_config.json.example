@@ -1,0 +1,14 @@
+{
+  "finance_whatsapp": "15551234567",
+  "export_day": 1,
+  "export_hour": 9,
+  "currency": "USD",
+  "currency_symbol": "$",
+  "receipts_dir": "receipts",
+  "db_path": "claims.db",
+  "proactive_queue_path": "/tmp/wa_proactive_queue.json",
+  "receipt_host_url": "https://claim-receipts.<your-subdomain>.workers.dev",
+  "receipt_upload_secret": "set-to-the-worker-UPLOAD_SECRET",
+  "receipt_ttl_days": 60,
+  "port": 5005
+}

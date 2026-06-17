@@ -1,0 +1,21 @@
+# Runtime data — never commit
+claims.db
+receipts/
+exports/
+claims_*.xlsx
+claim_config.json
+__pycache__/
+*.pyc
+
+# WhatsApp bridge (whatsapp-web.js) local session & deps
+bridge/node_modules/
+bridge/.wwebjs_auth/
+bridge/.wwebjs_cache/
+
+# Cloudflare worker local state & deps
+receipt-worker/.wrangler/
+receipt-worker/node_modules/
+
+# Editor / OS
+.claude/
+.DS_Store

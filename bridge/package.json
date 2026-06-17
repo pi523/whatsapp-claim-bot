@@ -1,0 +1,17 @@
+{
+  "name": "claim-bot-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone WhatsApp bridge (whatsapp-web.js) for the Claim Bot",
+  "main": "whatsapp_bridge.js",
+  "scripts": {
+    "start": "node whatsapp_bridge.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

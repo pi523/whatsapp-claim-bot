@@ -1,0 +1,10 @@
+name = "claim-receipts"
+main = "src/index.js"
+compatibility_date = "2025-01-15"
+
+# Create your own KV namespace and paste its id below:
+#   npx wrangler kv namespace create RECEIPTS
+# KV needs no payment method (unlike R2), so this stays on the free plan.
+[[kv_namespaces]]
+binding = "RECEIPTS"
+id = "<your-kv-namespace-id>"
