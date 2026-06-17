@@ -49,6 +49,39 @@ receipt-worker/   optional Cloudflare Worker that hosts compressed receipt
 - A spare WhatsApp number to act as the bot
 - (Optional) A free Cloudflare account for the receipt Worker
 
+## Before you start — what accounts do you actually need?
+
+This bot talks to WhatsApp through [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js),
+which links a normal WhatsApp number as a companion device (the same way
+WhatsApp Web does). In practice:
+
+- **You do NOT need** a Meta Business account, a Meta developer app, the WhatsApp
+  Business **Platform** / Cloud API, message-template approval, or a credit card.
+- All you need is **one spare phone number** with WhatsApp installed. The regular
+  WhatsApp app or the free **WhatsApp Business app** both work — note these are
+  *not* the same thing as the **WhatsApp Business Platform (Cloud API)**, which
+  this project deliberately does not use.
+- You link it **once** by scanning a QR code (Setup step 4). That scan is the
+  only way for the code to act as your number without the official API — which is
+  exactly what lets you skip the entire Meta business-account process.
+
+**Recommended:** use a dedicated number (a spare SIM or an old phone), not your
+main line — so the bot only ever replies to people who message *it*, and any
+risk stays on a throwaway number.
+
+**Trade-offs to accept:**
+- whatsapp-web.js is **unofficial** and technically against WhatsApp's Terms.
+  For a low-volume internal tool (a handful of employees) the risk is small but
+  real — a number could in theory be rate-limited or banned. Don't use a
+  business-critical line.
+- The bot phone should come online occasionally; if the linked-device session
+  expires, you simply re-scan the QR.
+
+If you later need an official, fully ToS-compliant, high-volume setup, that is
+the WhatsApp Business Platform (Cloud API) route — it requires a Meta Business
+account and rewriting `bridge/` to use Meta webhooks + message templates. That is
+out of scope for this project.
+
 ## Setup
 
 ### 1. Install dependencies
